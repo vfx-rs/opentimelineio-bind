@@ -4,20 +4,6 @@ use std::env;
 use std::path::PathBuf;
 
 fn main() {
-    // Tell cargo to tell rustc to link the system bzip2
-    // shared library.
-    println!("cargo:rustc-link-lib=bz2");
-
-    println!("cargo:rustc-flags=-L lib_dir");
-
-    println!("cargo:rustc-flags=-L wrapper_dir");
-    
-    println!("cargo:rustc-link-lib=wrapper");
-    
-    println!("cargo:rustc-link-lib=lib");
-    
-    println!("cargo:rustc-link-lib=stdc++");
-
     // Tell cargo to invalidate the built crate whenever the wrapper changes
     println!("cargo:rerun-if-changed=wrapper.h");
 
@@ -27,8 +13,7 @@ fn main() {
     let bindings = bindgen::Builder::default()
         // The input header we would like to generate
         // bindings for.
-//        .header("wrapper.h")
-        .header("./src/opentime/version.hpp")
+        .header("wrapper.h")
         // Tell cargo to invalidate the built crate whenever any of the
         // included header files changed.
         .parse_callbacks(Box::new(bindgen::CargoCallbacks))
