@@ -26,14 +26,14 @@ fn main() {
 
   println!("cargo:rerun-if-changed=build.rs");
   
-  println!("cargo:rustc-link-search=native={}", opentimeline_include_path.display()); // the "-L" flag
-  println!("cargo:rustc-link-lib={}/opentimelineio", opentimeline_lib_path.display()); // the "-l" flag
+  println!("cargo:rustc-link-search=native={}", opentimeline_lib_path.display()); // the "-L" flag
+  println!("cargo:rustc-link-lib=dylib=opentimelineio"); // the "-l" flag
 
-  println!("cargo:rustc-link-search=native={}", copentime_include_path.display());
-  println!("cargo:rustc-link-lib={}/copentime", copentime_lib_path.display());
+  println!("cargo:rustc-link-search=native={}", copentime_lib_path.display());
+  println!("cargo:rustc-link-lib=static=copentime");
 
-  println!("cargo:rustc-link-search=native={}", copentimeline_include_path.display());
-  println!("cargo:rustc-link-lib={}/copentimelineio", copentimeline_lib_path.display());
+  println!("cargo:rustc-link-search=native={}", copentimeline_lib_path.display());
+  println!("cargo:rustc-link-lib=static=copentimelineio");
 
   let bindings = bindgen::Builder::default()
     .header("wrapper.h")
