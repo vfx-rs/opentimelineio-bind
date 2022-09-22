@@ -58,6 +58,15 @@ impl std::convert::Into<sys::RationalTime> for RationalTime {
     }
 }
 
+impl std::default::Default for RationalTime {
+    fn default() -> Self {
+        Self {
+            value: 0.0,
+            rate: 1.0,
+        }
+    }
+}
+
 // TODO: Most of the unsafe APIs can be replaced with native Rust. The only real
 // exceptions would be string -> RationalTime -> string conversions.
 impl RationalTime {

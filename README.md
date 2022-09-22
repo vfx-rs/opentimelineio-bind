@@ -38,5 +38,6 @@ Testing
 
 ```bash
 clear && LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/otio/lib:/opt/otio/lib64 cargo llvm-cov --html
+clear && LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/otio/lib:/opt/otio/lib64 cargo valgrind test
 
 ```
