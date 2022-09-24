@@ -9,8 +9,8 @@
 #include <copentime/timeRange.h>
 #include <copentime/timeTransform.h>
 
-#include <copentimelineio/anyDictionary.h>
 #include <copentimelineio/any.h>
+#include <copentimelineio/anyDictionary.h>
 #include <copentimelineio/anyVector.h>
 #include <copentimelineio/clip.h>
 #include <copentimelineio/composable.h>
@@ -43,12 +43,12 @@
 #include <copentimelineio/serializableObjectVector.h>
 #include <copentimelineio/serializableObjectWithMetadata.h>
 #include <copentimelineio/serialization.h>
-#include <copentimelineio/stackAlgorithm.h>
 #include <copentimelineio/stack.h>
+#include <copentimelineio/stackAlgorithm.h>
 #include <copentimelineio/timeEffect.h>
 #include <copentimelineio/timeline.h>
-#include <copentimelineio/trackAlgorithm.h>
 #include <copentimelineio/track.h>
+#include <copentimelineio/trackAlgorithm.h>
 #include <copentimelineio/trackVector.h>
 #include <copentimelineio/transition.h>
 #include <copentimelineio/typeInfo.h>
